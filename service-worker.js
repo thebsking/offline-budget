@@ -1,14 +1,15 @@
-const { response } = require("express");
-
-const CACHE_NAME = "";
-const DATA_CACHE_NAME = "";
+const CACHE_NAME = 'static-cache-v2';
+const DATA_CACHE_NAME = 'data-cache-v1';
 const FILES_TO_CACHE = [
-
+    '/',
+    '/index.html',
+    '/index.js',
+    '/styles.css',
 ]
 
 self.addEventListener('install', (event)=> {
     event.waitUntil(
-        caches.open(DATA_CACHE_NAME).then((cache) => cache.add(''))
+        caches.open(DATA_CACHE_NAME).then((cache) => cache.add('/api/transaction'))
     );
 
     event.waitUntil(
