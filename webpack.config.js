@@ -4,6 +4,7 @@ const config = {
         path: __dirname + '/dist',
         filename: 'bundle.js'
     },
-    mode: 'develpment'
+    mode: 'development'
 };
+
 module.exports = config;
