@@ -5,7 +5,9 @@ const FILES_TO_CACHE = [
     '/index.html',
     '/index.js',
     '/styles.css',
-    '/manifest.webmanifest'
+    '/manifest.webmanifest',
+    'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+  'https://cdn.jsdelivr.net/npm/chart.js@2.8.0'
 ]
 
 self.addEventListener('install', (event)=> {
@@ -16,7 +18,7 @@ self.addEventListener('install', (event)=> {
     );
 });
 
-self.addEventListener('activate', (event)=> {
+self.addEventListener('active', (event)=> {
     event.waitUntil(
         caches.keys().then(keyList => {
             return Promise.all(
